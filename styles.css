@@ -1,0 +1,222 @@
+/* Base Styles */
+body {
+    background: linear-gradient(135deg, #1f2937, #b8860b, #d4af37);
+    background-attachment: fixed;
+    position: relative;
+    overflow-y: auto;
+    min-height: 100vh;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"%3E%3Ccircle fill="rgba(255,255,255,0.05)" cx="100" cy="100" r="90"/%3E%3C/svg%3E');
+    opacity: 0.2;
+    z-index: -1;
+  }
+  
+  /* Navigation */
+  .navbar {
+    background: linear-gradient(to right, #111827, #374151);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 4rem;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    font-family: 'Playfair Display', serif;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .nav-link {
+    position: relative;
+    transition: color 0.3s ease;
+    font-weight: 500;
+  }
+  
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: #d4af37;
+    transition: width 0.3s ease;
+  }
+  
+  .nav-link:hover::after {
+    width: 100%;
+  }
+  
+  .nav-link:hover {
+    color: #d4af37;
+  }
+  
+  /* Main Content */
+  .main-content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
+  
+  .form-container {
+    background: linear-gradient(to right, #111827, #374151);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 28rem;
+  }
+  
+  .form-container h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Form Elements */
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-group label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+  
+  .form-group select {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    background: #4b5563;
+    color: white;
+    border: none;
+    outline: none;
+  }
+  
+  .form-group select:focus {
+    outline: 2px solid #d4af37;
+  }
+  
+  .instructions {
+    text-align: center;
+    color: #d1d5db;
+    margin-bottom: 1rem;
+    font-size: 0.875rem;
+  }
+  
+  /* Priority List */
+  #priority-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .priority-item {
+    background: rgba(147, 197, 253, 0.2);
+    padding: 1rem;
+    border-radius: 0.375rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: move;
+    transition: background-color 0.3s ease;
+  }
+  
+  .priority-item:hover {
+    background: rgba(147, 197, 253, 0.3);
+  }
+  
+  .rank-display {
+    font-size: 0.75rem;
+    color: #9ca3af;
+  }
+  
+  /* Button */
+  #submit-btn {
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 0.375rem;
+    background: #4b5563;
+    color: white;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  #submit-btn:hover {
+    background: #d4af37;
+  }
+  
+  #submit-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+  
+  /* Results */
+  #result {
+    margin-top: 1.5rem;
+  }
+  
+  .phone-card {
+    background: #1f2937;
+    padding: 1rem;
+    border-radius: 0.375rem;
+    margin-bottom: 1rem;
+    border: 1px solid #d4af37;
+  }
+  
+  .phone-title {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  
+  .phone-score {
+    color: #d4af37;
+  }
+  
+  .phone-ratings {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+    font-size: 0.875rem;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  .error-message {
+    color: #f87171;
+    text-align: center;
+  }
