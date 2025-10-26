@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phone Finder - Premium Edition</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex flex-col min-h-screen">
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <span class="logo">Phone Finder</span>
+      <div class="nav-links">
+        <a href="#" class="nav-link">Home</a>
+        <a href="#" class="nav-link">About</a>
+        <a href="#" class="nav-link">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <div class="form-container">
+      <h1>Prioritize Your Choices</h1>
+      
+      <!-- Budget Dropdown -->
+      <div class="form-group">
+        <label for="budget">Select Your Budget Range</label>
+        <select id="budget">
+          <option value="flagship">Flagship (High Budget)</option>
+          <option value="midrange">Mid-range</option>
+          <option value="budget">Budget Phone</option>
+        </select>
+      </div>
+
+      <p class="instructions">Drag and drop to rank your preferences (1 = highest priority)</p>
+      
+      <ul id="priority-list">
+        <li class="priority-item" draggable="true" data-id="camera">
+          Camera
+          <span class="rank-display">Rank: <span class="rank">1</span></span>
+        </li>
+        <li class="priority-item" draggable="true" data-id="processor">
+          Processor
+          <span class="rank-display">Rank: <span class="rank">2</span></span>
+        </li>
+        <li class="priority-item" draggable="true" data-id="battery">
+          Battery
+          <span class="rank-display">Rank: <span class="rank">3</span></span>
+        </li>
+        <li class="priority-item" draggable="true" data-id="brand">
+          Brand
+          <span class="rank-display">Rank: <span class="rank">4</span></span>
+        </li>
+      </ul>
+
+      <button id="submit-btn">Submit Priorities</button>
+      <div id="result" class="hidden"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
